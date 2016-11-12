@@ -2,6 +2,7 @@
 
 void initEXTI(EXTI_InitTypeDef* EXTI_InitStruct)
 {
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_SYSCFG, ENABLE);
 	SYSCFG_EXTILineConfig(EXTI_PortSourceGPIOC, EXTI_PinSource0);
 
 	EXTI_InitStruct->EXTI_Line = EXTI_Line0;

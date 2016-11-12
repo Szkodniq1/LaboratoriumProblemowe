@@ -8,6 +8,8 @@ void initUSART(USART_InitTypeDef* USART_InitStructure)
 }
 
 void initPCUART(USART_InitTypeDef* USART_InitStructure) {
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_UART4, ENABLE);
+
 	USART_InitStructure->USART_BaudRate = 9600;
 	USART_InitStructure->USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure->USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
@@ -21,6 +23,8 @@ void initPCUART(USART_InitTypeDef* USART_InitStructure) {
 }
 
 void initEncoderUSART(USART_InitTypeDef* USART_InitStructure) {
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
+
 	USART_InitStructure->USART_BaudRate = 9600;
 	USART_InitStructure->USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure->USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
@@ -34,6 +38,8 @@ void initEncoderUSART(USART_InitTypeDef* USART_InitStructure) {
 }
 
 void initDroneUSART(USART_InitTypeDef* USART_InitStructure) {
+	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART6, ENABLE);
+
 	USART_InitStructure->USART_BaudRate = 9600;
 	USART_InitStructure->USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure->USART_Mode = USART_Mode_Tx | USART_Mode_Rx;
