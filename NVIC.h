@@ -3,7 +3,6 @@
 
 #include "misc.h"
 
-
 void initNVIC(NVIC_InitTypeDef* NVIC_InitStruct);
 void initSynchroInterrupt(NVIC_InitTypeDef* NVIC_InitStruct);
 void initPCUARTInterrupt(NVIC_InitTypeDef* NVIC_InitStructure);
