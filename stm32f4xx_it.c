@@ -29,7 +29,6 @@
 #include "stm32f4xx_it.h"
 #include "usb_core.h"
 #include "usbd_core.h"
-#include "stm32f4_discovery.h"
 #include "stm32f4xx_exti.h"
 #include "usbd_hid_core.h"
 

@@ -23,7 +23,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usb_bsp.h"
 #include "usbd_conf.h"
-#include "stm32f4_discovery.h"
 #include "stm32f4xx_gpio.h"
 #include "misc.h"
 #include "stm32f4xx_rcc.h"
@@ -277,7 +276,7 @@ void USB_OTG_BSP_Init(USB_OTG_CORE_HANDLE *pdev)
   EXTI_ClearITPendingBit(USER_BUTTON_EXTI_LINE);
 #else
   /* Configure the Key button in EXTI mode */
-  STM32F4_Discovery_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
+  //STM32F4_Discovery_PBInit(BUTTON_USER, BUTTON_MODE_GPIO);
 #endif
 
 #ifdef USB_OTG_HS_LOW_PWR_MGMT_SUPPORT
