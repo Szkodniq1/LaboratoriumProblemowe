@@ -16,28 +16,49 @@ void EXTI0_IRQHandler(void)
 //Przerwanie od komputera
 void UART4_IRQHandler(void)
 {
-	if(USART_GetITStatus(UART4, USART_IT_RXNE) != RESET)
+	uint8_t data;
+	if (USART_GetFlagStatus(UART4, USART_FLAG_RXNE))
 	{
+		data = USART_ReceiveData(UART4);
+		if(data == 'f')
+		{
+			USART_put(UART4, "UART4 here\r\n");
+		}
 
 	}
+	USART_ClearITPendingBit(UART4, USART_IT_RXNE);
 }
 
 //Przerwanie od enkodera
 void USART1_IRQHandler(void)
 {
-	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
-	{
+	uint8_t data;
+		if (USART_GetFlagStatus(USART1, USART_FLAG_RXNE))
+		{
+			data = USART_ReceiveData(USART1);
+			if(data == 'g')
+			{
+				USART_put(USART1, "USART1 here\r\n");
+			}
 
-	}
+		}
+		USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 }
 
 //Przerwanie od drona
 void USART6_IRQHandler(void)
 {
-	if(USART_GetITStatus(USART6, USART_IT_RXNE) != RESET)
+	uint8_t data;
+	if (USART_GetFlagStatus(USART6, USART_FLAG_RXNE))
 	{
+		data = USART_ReceiveData(USART6);
+		if(data == 'h')
+		{
+			USART_put(USART6, "USART6 here\r\n");
+		}
 
 	}
+	USART_ClearITPendingBit(USART6, USART_IT_RXNE);
 }
 
 

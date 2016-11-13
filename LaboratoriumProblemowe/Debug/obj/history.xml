@@ -1,88 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_lib\include -I..\..\..\workspace\LaboratoriumProblemowe\cmsis -I..\..\..\workspace -I..\..\..\workspace\LaboratoriumProblemowe -I..\..\..\workspace\LaboratoriumProblemowe\usb_hid_lib\inc -I..\..\.. -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_boot -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_lib -I..\..\..\workspace\LaboratoriumProblemowe\usb_hid_lib">
-      <target file="usbd_core.o" lastModified="157fbec3be6">
-         <source file="..\..\..\usb_hid_lib\src\usbd_core.c" lastModified="157f84b8487"/>
-      </target>
-      <target file="usbd_desc.o" lastModified="157fbec6ef2">
-         <source file="..\..\..\usb_hid_lib\src\usbd_desc.c" lastModified="157f84b8489"/>
-      </target>
-      <target file="usbd_ioreq.o" lastModified="157fbece186">
-         <source file="..\..\..\usb_hid_lib\src\usbd_ioreq.c" lastModified="157f84b848b"/>
-      </target>
-      <target file="usb_bsp.o" lastModified="157fbec9503">
-         <source file="..\..\..\usb_hid_lib\src\usb_bsp.c" lastModified="157f868862f"/>
-      </target>
-      <target file="usbd_req.o" lastModified="157fbeca1d5">
-         <source file="..\..\..\usb_hid_lib\src\usbd_req.c" lastModified="157f84b848c"/>
-      </target>
-      <target file="usb_dcd.o" lastModified="157fbecd4b2">
-         <source file="..\..\..\usb_hid_lib\src\usb_dcd.c" lastModified="157f84b8491"/>
-      </target>
-      <target file="usb_dcd_int.o" lastModified="157fbecaeac">
-         <source file="..\..\..\usb_hid_lib\src\usb_dcd_int.c" lastModified="157f84b8493"/>
-      </target>
-      <target file="usbd_hid_core.o" lastModified="157fbec2f24">
-         <source file="..\..\..\usb_hid_lib\src\usbd_hid_core.c" lastModified="157f84b848a"/>
-      </target>
-      <target file="stm32f4xx_it.o" lastModified="157fbec621e">
-         <source file="..\..\..\stm32f4xx_it.c" lastModified="157f866d74d"/>
-      </target>
-      <target file="usb_core.o" lastModified="157fbec090e">
-         <source file="..\..\..\usb_hid_lib\src\usb_core.c" lastModified="157f84b8490"/>
-      </target>
-      <target file="usbd_usr.o" lastModified="157fbec15bb">
-         <source file="..\..\..\usb_hid_lib\src\usbd_usr.c" lastModified="157f8666630"/>
-      </target>
-   </processor>
    <processor signature="arm-none-eabi-gcc noversion nomachine -mcpu=cortex-m4 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F407VG -DSTM32F4XX -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_lib\include -I..\..\..\workspace\LaboratoriumProblemowe\cmsis -I..\..\..\workspace -I..\..\..\workspace\LaboratoriumProblemowe -I..\..\.. -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_boot -I..\..\..\workspace\LaboratoriumProblemowe\cmsis_lib">
-      <target file="stm32f4xx_exti.o" lastModified="1585ad03af9">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="157f84b849b"/>
-      </target>
-      <target file="stm32f4xx_gpio.o" lastModified="1585ad039a8">
+      <target file="stm32f4xx_gpio.o" lastModified="1585dca18f8">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_gpio.c" lastModified="157f207ddac"/>
       </target>
-      <target file="USART.o" lastModified="1585ae9b673">
-         <source file="..\..\..\USART.c" lastModified="1585ad95693"/>
+      <target file="NVIC.o" lastModified="1585deb7064">
+         <source file="..\..\..\NVIC.c" lastModified="1585deb6dbc"/>
       </target>
-      <target file="stm32f4xx_syscfg.o" lastModified="1585ad036d1">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="1585acc0193"/>
-      </target>
-      <target file="startup_stm32f4xx.o" lastModified="1585aa6d6ea">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="157f207cd90"/>
-      </target>
-      <target file="stm32f4xx_tim.o" lastModified="1585ad03c9a">
+      <target file="stm32f4xx_tim.o" lastModified="1585dca1b81">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="157f8474791"/>
       </target>
-      <target file="system_stm32f4xx.o" lastModified="1585ad03a10">
-         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="157f85bfbe8"/>
-      </target>
-      <target file="GPIO.o" lastModified="1585ad038bb">
-         <source file="..\..\..\GPIO.c" lastModified="1585a820c76"/>
-      </target>
-      <target file="EXTI.o" lastModified="1585ae9b5e0">
+      <target file="EXTI.o" lastModified="1585dca18a4">
          <source file="..\..\..\EXTI.c" lastModified="1585ad6b206"/>
       </target>
-      <target file="misc.o" lastModified="1585ad03b58">
-         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1585a51e009"/>
+      <target file="system_stm32f4xx.o" lastModified="1585dca1958">
+         <source file="..\..\..\cmsis_boot\system_stm32f4xx.c" lastModified="157f85bfbe8"/>
       </target>
-      <target file="UART.o" lastModified="1585aa6db91">
-         <source file="..\..\..\UART.c" lastModified="1585aa6d308"/>
+      <target file="startup_stm32f4xx.o" lastModified="1585dca16de">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="157f207cd90"/>
       </target>
-      <target file="stm32f4xx_spi.o" lastModified="1585ad03a94">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="1585a520002"/>
-      </target>
-      <target file="stm32f4xx_rcc.o" lastModified="1585ad0384e">
-         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="157f207cd87"/>
-      </target>
-      <target file="NVIC.o" lastModified="1585ae9f8e6">
-         <source file="..\..\..\NVIC.c" lastModified="1585ae9e497"/>
-      </target>
-      <target file="stm32f4xx_usart.o" lastModified="1585ad03765">
+      <target file="stm32f4xx_usart.o" lastModified="1585dca169f">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="1585aa3d624"/>
       </target>
-      <target file="main.o" lastModified="1585ae9b4ef">
-         <source file="..\..\..\main.c" lastModified="1585ae592ea"/>
+      <target file="stm32f4xx_exti.o" lastModified="1585dca1a0f">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="157f84b849b"/>
+      </target>
+      <target file="stm32f4xx_syscfg.o" lastModified="1585dca1625">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_syscfg.c" lastModified="1585acc0193"/>
+      </target>
+      <target file="main.o" lastModified="1585df40940">
+         <source file="..\..\..\main.c" lastModified="1585deb6da7"/>
+      </target>
+      <target file="stm32f4xx_spi.o" lastModified="1585dca19c1">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_spi.c" lastModified="1585a520002"/>
+      </target>
+      <target file="GPIO.o" lastModified="1585df78faa">
+         <source file="..\..\..\GPIO.c" lastModified="1585df78d72"/>
+      </target>
+      <target file="stm32f4xx_rcc.o" lastModified="1585dca17b6">
+         <source file="..\..\..\cmsis_lib\source\stm32f4xx_rcc.c" lastModified="157f207cd87"/>
+      </target>
+      <target file="misc.o" lastModified="1585dca1a64">
+         <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1585a51e009"/>
+      </target>
+      <target file="USART.o" lastModified="1585df4099b">
+         <source file="..\..\..\USART.c" lastModified="1585df4070e"/>
       </target>
    </processor>
 </history>

@@ -8,5 +8,5 @@ void initSynchroInterrupt(NVIC_InitTypeDef* NVIC_InitStruct);
 void initPCUARTInterrupt(NVIC_InitTypeDef* NVIC_InitStructure);
 void initEncoderUARTInterrupt(NVIC_InitTypeDef* NVIC_InitStructure);
 void initDroneUARTInterrupt(NVIC_InitTypeDef* NVIC_InitStructure);
-
+void enableNVIC();
 #endif
