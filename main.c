@@ -15,6 +15,7 @@ int main(void)
 	initSolver();
 
 	lightDiode(DEVICE_ON);
+	STATE = STATE_IDLE;
 
     while(1)
     {

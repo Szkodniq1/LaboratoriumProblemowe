@@ -6,6 +6,10 @@
 
 #define UART_BAUDRATE 9600
 
+#define PC UART4
+#define ENCODER USART1
+#define DRONE USART6
+
 void initUSART(USART_InitTypeDef* USART_InitStructure);
 void initPCUART(USART_InitTypeDef* USART_InitStructure);
 void initEncoderUSART(USART_InitTypeDef* USART_InitStructure);
