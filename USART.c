@@ -62,3 +62,16 @@ void USART_put(USART_TypeDef* USARTx, volatile char *s){
 		*s++;
 	}
 }
+
+void USART_put_float(USART_TypeDef* USARTx, float f){
+	char convertedFloat[4];
+	sprintf(convertedFloat, "%f", f);
+	USART_put(USARTx, convertedFloat);
+}
+
+void USART_put_long(USART_TypeDef* USARTx, unsigned long l){
+	char convertedLong[4];
+	sprintf(convertedLong, "%lu", l);
+	USART_put(USARTx, convertedLong);
+}
+

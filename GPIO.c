@@ -74,3 +74,7 @@ void initPortE(GPIO_InitTypeDef* GPIO_InitStructure)
 	GPIO_Init(GPIOE, GPIO_InitStructure);
 
 }
+
+void lightDiode(uint16_t diode) {
+	GPIO_SetBits(GPIOB, diode);
+}
