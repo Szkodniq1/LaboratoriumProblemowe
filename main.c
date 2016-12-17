@@ -12,6 +12,7 @@ int main(void)
 	initUSART(&USART_InitStructure);
 	initEXTI(&EXTI_InitStructure);
 	initNVIC(&NVIC_InitStructure);
+	initSolver();
 
 	lightDiode(DEVICE_ON);
 

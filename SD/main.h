@@ -7,7 +7,8 @@
 #include "EXTI.h"
 #include "NVIC.h"
 #include "SD.h"
-#include <Protocols.h>
+#include <PROTOCOLS.h>
+#include "SOLVER.h"
 
 void EXTI0_IRQHandler(void);
 void UART4_IRQHandler(void);

@@ -13,12 +13,17 @@
          <include file="..\..\..\cmsis\core_cmFunc.h"/>
          <include file="..\..\..\cmsis\core_cm4_simd.h"/>
       </source>
+      <source file="..\..\..\SD\SOLVER.h" lastModified="1590d34f020">
+      </source>
       <source file="..\..\..\cmsis_lib\include\misc.h" lastModified="1585a51e004">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f4xx_tim.c" lastModified="157f8474791">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\SD\SOLVER.c" lastModified="1590d3729c7">
+         <include file="..\..\..\SD\SOLVER.h"/>
       </source>
       <source file="..\..\..\SD\SD.h" lastModified="1590d1d895d">
          <include file="..\..\..\SD\defines.h"/>
@@ -42,6 +47,9 @@
       <source file="..\..\..\GPIO.h" lastModified="1590d251b43">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_gpio.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
+      </source>
+      <source file="..\..\..\GPIO.c" lastModified="1590d2290a8">
+         <include file="..\..\..\GPIO.h"/>
       </source>
       <source file="..\..\..\SD\fatfs\fatfs\drivers\fatfs_sd.h" lastModified="1590d16e249">
          <include file="..\..\..\SD\fatfs\fatfs\diskio.h"/>
@@ -94,15 +102,15 @@
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h" lastModified="157f207cd86">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="157f84b849b">
-         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
-      </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="157f207cd98">
-      </source>
       <source file="..\..\..\SD\fatfs\fatfs\drivers\fatfs_sdram.h" lastModified="14e24cdd4d0">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\SD\defines.h"/>
          <include file="..\..\..\SD\fatfs\fatfs\diskio.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\stm32f4xx_exti.c" lastModified="157f84b849b">
+         <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f4xx.h" lastModified="157f207cd98">
       </source>
       <source file="..\..\..\cmsis\core_cmInstr.h" lastModified="157f207d570">
       </source>
@@ -221,9 +229,6 @@
          <include file="..\..\..\SD\fatfs\fatfs\integer.h"/>
          <include file="..\..\..\SD\fatfs\fatfs\ffconf.h"/>
       </source>
-      <source file="..\..\..\Protocols.c" lastModified="1590d1954b1">
-         <include file="..\..\..\Protocols.h"/>
-      </source>
       <source file="..\..\..\SD\tm_stm32f4_delay.h" lastModified="152630afadf">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
@@ -264,6 +269,11 @@
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_syscfg.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_rcc.h"/>
       </source>
+      <source file="..\..\..\PROTOCOLS.h" lastModified="1590d1e3199">
+      </source>
+      <source file="..\..\..\PROTOCOLS.c" lastModified="1590d385582">
+         <include file="..\..\..\PROTOCOLS.h"/>
+      </source>
       <source file="..\..\..\SD\fatfs\fatfs\integer.h" lastModified="14611c3a930">
       </source>
       <source file="..\..\..\cmsis_boot\startup\startup_stm32f4xx.c" lastModified="157f207cd90">
@@ -276,9 +286,6 @@
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f4xx_tim.h" lastModified="157f847478f">
          <include file="..\..\..\cmsis_boot\stm32f4xx.h"/>
-      </source>
-      <source file="..\..\..\main.c" lastModified="1590d247c3d">
-         <include file="..\..\..\SD\main.h"/>
       </source>
       <source file="..\..\..\EXTI.h" lastModified="1585ae90b3b">
          <include file="..\..\..\cmsis_lib\include\stm32f4xx_exti.h"/>
@@ -301,14 +308,15 @@
       <source file="..\..\..\SD\fatfs\fatfs\option\ccsbcs.c" lastModified="14994e0e8c0">
          <include file="..\..\..\SD\fatfs\fatfs\ff.h"/>
       </source>
-      <source file="..\..\..\SD\main.h" lastModified="1590d2482ff">
+      <source file="..\..\..\SD\main.h" lastModified="1590d388235">
          <include file="..\..\..\cmsis_boot\stm32f4xx_conf.h"/>
          <include file="..\..\..\GPIO.h"/>
          <include file="..\..\..\USART.h"/>
          <include file="..\..\..\EXTI.h"/>
          <include file="..\..\..\NVIC.h"/>
          <include file="..\..\..\SD\SD.h"/>
-         <include file="..\..\..\Protocols.h"/>
+         <include file="..\..\..\PROTOCOLS.h"/>
+         <include file="..\..\..\SD\SOLVER.h"/>
       </source>
       <source file="..\..\..\SD\fatfs\fatfs\option\cc950.c" lastModified="14994e0e8c0">
          <include file="..\..\..\SD\fatfs\fatfs\ff.h"/>

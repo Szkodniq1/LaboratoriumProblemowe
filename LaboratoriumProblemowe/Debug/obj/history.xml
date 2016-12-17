@@ -49,6 +49,9 @@
       <target file="tm_stm32f4_timer_properties.o" lastModified="1590d12a0d1">
          <source file="..\..\..\SD\tm_stm32f4_timer_properties.c" lastModified="1488e7b89f5"/>
       </target>
+      <target file="PROTOCOLS.o" lastModified="1590d385777">
+         <source file="..\..\..\PROTOCOLS.c" lastModified="1590d385582"/>
+      </target>
       <target file="misc.o" lastModified="1590d12a018">
          <source file="..\..\..\cmsis_lib\source\misc.c" lastModified="1585a51e009"/>
       </target>
@@ -85,11 +88,11 @@
       <target file="ff.o" lastModified="1590d129f11">
          <source file="..\..\..\SD\fatfs\fatfs\ff.c" lastModified="14bb5aa4590"/>
       </target>
-      <target file="main.o" lastModified="1590d251d6d">
-         <source file="..\..\..\main.c" lastModified="1590d247c3d"/>
+      <target file="main.o" lastModified="1590d38cab5">
+         <source file="..\..\..\main.c" lastModified="1590d38bf96"/>
       </target>
-      <target file="Protocols.o" lastModified="1590d1e386d">
-         <source file="..\..\..\Protocols.c" lastModified="1590d1954b1"/>
+      <target file="SOLVER.o" lastModified="1590d385819">
+         <source file="..\..\..\SD\SOLVER.c" lastModified="1590d3729c7"/>
       </target>
       <target file="stm32f4xx_usart.o" lastModified="1590d129531">
          <source file="..\..\..\cmsis_lib\source\stm32f4xx_usart.c" lastModified="1585aa3d624"/>
