@@ -7,12 +7,14 @@
 //ustawiona biblioteka
 #define SET_LIBRARY TOMKOWA_BIBLIOTEKA
 
-//Estimated params
+//Estimated/set params
 float P,I,D;
 //Angles
 float angleDrone,angleEncoder,angleSet;
 //Bounds
 float lowerP,upperP,lowerI,upperI,lowerD,upperD;
+//Time [ms]
+long time;
 
 void initSolver();
 void solveRegulatorParams();

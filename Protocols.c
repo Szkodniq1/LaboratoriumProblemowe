@@ -64,7 +64,67 @@ void solvePCHeader(char data){
 }
 
 void solvePCData(char data){
+	frame[index] = data;
+	index++;
+	if(index == 4) {
+		index = 0;
+		pcFrameType = HEADER;
+		saveDataInProperVariable(atof(frame));
+	}
+}
 
+void saveDataInProperVariable(float value) {
+	switch(receivedData) {
+			case LOWER_P:
+				lowerP = value;
+				break;
+			case UPPER_P:
+				upperP = value;
+				break;
+			case LOWER_I:
+				lowerI = value;
+				break;
+			case UPPER_I:
+				upperI = value;
+				break;
+			case LOWER_D:
+				lowerD = value;
+				break;
+			case UPPER_D:
+				upperD = value;
+				break;
+			case P_SETTINGS:
+				P = value;
+				break;
+			case I_SETTINGS:
+				I = value;
+				break;
+			case D_SETTINGS:
+				D = value;
+				break;
+			default:
+				break;
+		}
+}
+
+void sendAllDataToPC() {
+	//k¹ty
+	USART_put(PC, ANGLE_DRONE);
+	USART_put_float(PC, angleDrone);
+	USART_put(PC, ANGLE_ENC);
+	USART_put_float(PC, angleEncoder);
+	USART_put(PC, ANGLE_SET);
+	USART_put_float(PC, angleSet);
+	//parametry pid
+	USART_put(PC, CURRENT_P);
+	USART_put_float(PC, P);
+	USART_put(PC, CURRENT_I);
+	USART_put_float(PC, I);
+	USART_put(PC, CURRENT_D);
+	USART_put_float(PC, D);
+	//czas
+	USART_put(PC, TIME);
+	USART_put_long(PC, time);
 }
 
 void solveDroneRequest(char data) {

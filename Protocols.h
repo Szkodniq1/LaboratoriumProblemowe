@@ -2,6 +2,8 @@
 #define __PROTOCOLS_H
 
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 #include "USART.h"
 #include "SOLVER.h"
 
@@ -40,10 +42,14 @@
 
 char pcFrameType;
 char receivedData;
+char frame[4];
+char index = 0;
 
 void solvePCRequest(char data);
 void solvePCHeader(char data);
 void solvePCData(char data);
+void saveDataInProperVariable(float value);
+void sendAllDataToPC();
 void solveDroneRequest(char data);
 void solveEncoderRequest(char data);
 
