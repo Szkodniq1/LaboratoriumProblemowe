@@ -130,29 +130,3 @@ void sendAllDataToPC() {
 void solveDroneRequest(char data) {
 
 }
-
-void solveEncoderRequest(char data) {
-
-}
-
-char translateFromGrayToBinary(char data) {
-	char help;
-	char converted = data & 0x80;
-
-	help = converted>>1;
-	converted = converted | (help ^ (data & 0x40));
-	help = (converted & 0x40)>>1;
-	converted = converted | (help ^ (data & 0x20));
-	help = (converted & 0x20)>>1;
-	converted = converted | (help ^ (data & 0x10));
-	help = (converted & 0x10)>>1;
-	converted = converted | (help ^ (data & 0x08));
-	help = (converted & 0x08)>>1;
-	converted = converted | (help ^ (data & 0x04));
-	help = (converted & 0x04)>>1;
-	converted = converted | (help ^ (data & 0x02));
-	help = (converted & 0x02)>>1;
-	converted = converted | (help ^ (data & 0x01));
-
-	return converted;
-}

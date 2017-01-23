@@ -15,6 +15,8 @@
 char STATE;
 
 void EXTI0_IRQHandler(void);
+void EXTI1_IRQHandler(void);
+void EXTI2_IRQHandler(void);
 void UART4_IRQHandler(void);
 void USART1_IRQHandler(void);
 void USART6_IRQHandler(void);

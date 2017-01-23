@@ -32,6 +32,24 @@ void EXTI0_IRQHandler(void)
     }
 }
 
+//Przerwanie od enkodera A
+void EXTI1_IRQHandler(void)
+{
+    if (EXTI_GetITStatus(EXTI_Line1) != RESET) {
+
+        EXTI_ClearITPendingBit(EXTI_Line1);
+    }
+}
+
+//Przerwanie od enkodera B (przesuniete o 90st)
+void EXTI2_IRQHandler(void)
+{
+    if (EXTI_GetITStatus(EXTI_Line2) != RESET) {
+
+        EXTI_ClearITPendingBit(EXTI_Line2);
+    }
+}
+
 //Przerwanie od komputera
 void UART4_IRQHandler(void)
 {
@@ -40,16 +58,6 @@ void UART4_IRQHandler(void)
 		solvePCRequest(USART_ReceiveData(UART4));
 	}
 	USART_ClearITPendingBit(UART4, USART_IT_RXNE);
-}
-
-//Przerwanie od enkodera
-void USART1_IRQHandler(void)
-{
-	if (USART_GetFlagStatus(USART1, USART_FLAG_RXNE))
-	{
-		solveEncoderRequest(USART_ReceiveData(USART1));
-	}
-	USART_ClearITPendingBit(USART1, USART_IT_RXNE);
 }
 
 //Przerwanie od drona

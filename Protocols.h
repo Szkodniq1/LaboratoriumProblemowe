@@ -51,7 +51,6 @@ void solvePCData(char data);
 void saveDataInProperVariable(float value);
 void sendAllDataToPC();
 void solveDroneRequest(char data);
-void solveEncoderRequest(char data);
 char translateFromGrayToBinary(char data);
 
 #endif
