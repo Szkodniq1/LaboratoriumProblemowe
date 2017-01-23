@@ -43,7 +43,7 @@
 char pcFrameType;
 char receivedData;
 char frame[4];
-char index = 0;
+char shiftedIndex = 0;
 
 void solvePCRequest(char data);
 void solvePCHeader(char data);
@@ -52,5 +52,6 @@ void saveDataInProperVariable(float value);
 void sendAllDataToPC();
 void solveDroneRequest(char data);
 void solveEncoderRequest(char data);
+char translateFromGrayToBinary(char data);
 
 #endif

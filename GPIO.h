@@ -6,6 +6,8 @@
 
 #define DEVICE_ON GPIO_Pin_0
 #define WORKING GPIO_Pin_1
+#define CARD_MOUNTED GPIO_Pin_2
+#define CARD_NOT_MOUNTED GPIO_Pin_3
 
 void initGPIO(GPIO_InitTypeDef* GPIO_InitStructure);
 void initPortA(GPIO_InitTypeDef* GPIO_InitStructure);

@@ -7,11 +7,15 @@
 #include <stdio.h>
 #include <string.h>
 
+
 //Fatfs object
 FATFS FatFs;
 //File object
 FIL fil;
-
+/*
 void test_sd(FATFS* FatFs, FIL* fil);
-
+void mount_card();
+void unmount_card();
+void save_meassurementes();
+*/
 #endif

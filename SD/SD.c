@@ -1,6 +1,6 @@
 #include "SD.h"
-
-void test_sd(FATFS* FatFs, FIL* fil)
+/*
+void test_sd()
 {
 	//Free and total space
 	uint32_t total, free;
@@ -35,3 +35,23 @@ void test_sd(FATFS* FatFs, FIL* fil)
         f_mount(0, "", 1);
     }
 }
+
+void mount_card() {
+	if (f_mount(FatFs, "", 1) == FR_OK) {
+		GPIO_SetBits(GPIOB, CARD_MOUNTED);
+	} else {
+		GPIO_SetBits(GPIOB, CARD_NOT_MOUNTED);
+	}
+}
+
+void unmount_card() {
+	f_mount(0, "", 1);
+}
+
+void save_meassurementes() {
+	if (f_open(fil, "pomiary.txt", FA_OPEN_ALWAYS | FA_READ | FA_WRITE) == FR_OK) {
+		f_puts("First string in my file\n", fil);
+		f_close(fil);
+	}
+}
+*/

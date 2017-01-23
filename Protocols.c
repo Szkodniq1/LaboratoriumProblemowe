@@ -12,11 +12,11 @@ void solvePCHeader(char data){
 	switch(data) {
 		case START_PC:
 			STATE = STATE_WORKING;
-			USART_put(PC, START_UC);
+			USART_put_char(PC, START_UC);
 			break;
 		case STOP_PC:
 			STATE = STATE_IDLE;
-			USART_put(PC, STOP_UC);
+			USART_put_char(PC, STOP_UC);
 			break;
 		case LOWER_P:
 			pcFrameType = DATA;
@@ -64,10 +64,10 @@ void solvePCHeader(char data){
 }
 
 void solvePCData(char data){
-	frame[index] = data;
-	index++;
-	if(index == 4) {
-		index = 0;
+	frame[shiftedIndex] = data;
+	shiftedIndex++;
+	if(shiftedIndex == 4) {
+		shiftedIndex = 0;
 		pcFrameType = HEADER;
 		saveDataInProperVariable(atof(frame));
 	}
@@ -109,27 +109,50 @@ void saveDataInProperVariable(float value) {
 
 void sendAllDataToPC() {
 	//k¹ty
-	USART_put(PC, ANGLE_DRONE);
+	USART_put_char(PC, ANGLE_DRONE);
 	USART_put_float(PC, angleDrone);
-	USART_put(PC, ANGLE_ENC);
+	USART_put_char(PC, ANGLE_ENC);
 	USART_put_float(PC, angleEncoder);
-	USART_put(PC, ANGLE_SET);
+	USART_put_char(PC, ANGLE_SET);
 	USART_put_float(PC, angleSet);
 	//parametry pid
-	USART_put(PC, CURRENT_P);
+	USART_put_char(PC, CURRENT_P);
 	USART_put_float(PC, P);
-	USART_put(PC, CURRENT_I);
+	USART_put_char(PC, CURRENT_I);
 	USART_put_float(PC, I);
-	USART_put(PC, CURRENT_D);
+	USART_put_char(PC, CURRENT_D);
 	USART_put_float(PC, D);
 	//czas
-	USART_put(PC, TIME);
+	USART_put_char(PC, TIME);
 	USART_put_long(PC, time);
 }
 
 void solveDroneRequest(char data) {
 
 }
+
 void solveEncoderRequest(char data) {
 
+}
+
+char translateFromGrayToBinary(char data) {
+	char help;
+	char converted = data & 0x80;
+
+	help = converted>>1;
+	converted = converted | (help ^ (data & 0x40));
+	help = (converted & 0x40)>>1;
+	converted = converted | (help ^ (data & 0x20));
+	help = (converted & 0x20)>>1;
+	converted = converted | (help ^ (data & 0x10));
+	help = (converted & 0x10)>>1;
+	converted = converted | (help ^ (data & 0x08));
+	help = (converted & 0x08)>>1;
+	converted = converted | (help ^ (data & 0x04));
+	help = (converted & 0x04)>>1;
+	converted = converted | (help ^ (data & 0x02));
+	help = (converted & 0x02)>>1;
+	converted = converted | (help ^ (data & 0x01));
+
+	return converted;
 }

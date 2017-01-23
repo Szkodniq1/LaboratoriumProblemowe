@@ -55,7 +55,13 @@ void initDroneUSART(USART_InitTypeDef* USART_InitStructure) {
 	USART_ITConfig(USART6, USART_IT_RXNE, ENABLE);
 }
 
-void USART_put(USART_TypeDef* USARTx, volatile char *s){
+void USART_put_char(USART_TypeDef* USARTx, uint8_t ch)
+{
+	while(!(USARTx->SR & USART_SR_TXE));
+	USARTx->DR = ch;
+}
+
+void USART_put_string(USART_TypeDef* USARTx, volatile char *s){
 	while(*s){
 		while (USART_GetFlagStatus(USARTx, USART_FLAG_TXE) == RESET);
 		USART_SendData(USARTx, *s);
@@ -64,14 +70,20 @@ void USART_put(USART_TypeDef* USARTx, volatile char *s){
 }
 
 void USART_put_float(USART_TypeDef* USARTx, float f){
+	int i = 0;
 	char convertedFloat[4];
 	sprintf(convertedFloat, "%f", f);
-	USART_put(USARTx, convertedFloat);
+	for(i ; i < 4 ; i++) {
+		USART_put_char(USARTx, convertedFloat[i]);
+	}
 }
 
 void USART_put_long(USART_TypeDef* USARTx, unsigned long l){
+	int i = 0;
 	char convertedLong[4];
 	sprintf(convertedLong, "%lu", l);
-	USART_put(USARTx, convertedLong);
+	for(i ; i < 4; i++) {
+		USART_put_char(USARTx, convertedLong[i]);
+	}
 }
 

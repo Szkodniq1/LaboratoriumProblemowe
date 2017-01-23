@@ -7,7 +7,6 @@
 #include "EXTI.h"
 #include "NVIC.h"
 #include "SD.h"
-#include <PROTOCOLS.h>
 #include "SOLVER.h"
 
 #define STATE_IDLE 0
