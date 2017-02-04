@@ -1,5 +1,19 @@
+/**
+\author Piotr Gomo³a
+\date 4.02.2017
+
+Plik inicjalizacji GPIO, zaweira te¿ intuicyjn¹ funkcjê do zapalania diod.
+
+*/
 #include "GPIO.h"
 
+/** @brief Zbiorcza inicjalizacja wszystkich portów GPIO.
+
+@param GPIO_InitStructure WskaŸnik do struktury inicjuj¹cej GPIO zadeklarowanej na pocz¹tku funkcji main programu.
+
+Wykorzystywane s¹ porty A - wielozadaniowy, B - diody LED, C - przerwania, dron oraz karta SD po SDIO, E - obs³uga wejcia joysticka (5 przycisków).
+
+ */
 void initGPIO(GPIO_InitTypeDef* GPIO_InitStructure)
 {
 	initPortA(GPIO_InitStructure);
@@ -8,6 +22,13 @@ void initGPIO(GPIO_InitTypeDef* GPIO_InitStructure)
 	initPortE(GPIO_InitStructure);
 }
 
+/** @brief Inicjalizacja portu A.
+
+@param GPIO_InitStructure WskaŸnik do struktury inicjuj¹cej GPIO zadeklarowanej na pocz¹tku funkcji main programu.
+
+Port A odpowiada za komunikacjê z komputerem po UART4 oraz ewentualn¹ obs³ugê SPI wejcia karty SD.
+
+ */
 void initPortA(GPIO_InitTypeDef* GPIO_InitStructure)
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOA, ENABLE);
@@ -27,6 +48,13 @@ void initPortA(GPIO_InitTypeDef* GPIO_InitStructure)
 	GPIO_Init(GPIOA, GPIO_InitStructure);
 }
 
+/** @brief Inicjalizacja portu B.
+
+@param GPIO_InitStructure WskaŸnik do struktury inicjuj¹cej GPIO zadeklarowanej na pocz¹tku funkcji main programu.
+
+Port B odpowiada za 8 diod sygnalizacyjnych.
+
+ */
 void initPortB(GPIO_InitTypeDef* GPIO_InitStructure)
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOB, ENABLE);
@@ -39,6 +67,13 @@ void initPortB(GPIO_InitTypeDef* GPIO_InitStructure)
 	GPIO_Init(GPIOB, GPIO_InitStructure);
 }
 
+/** @brief Inicjalizacja portu C.
+
+@param GPIO_InitStructure WskaŸnik do struktury inicjuj¹cej GPIO zadeklarowanej na pocz¹tku funkcji main programu.
+
+Port C odpowiada komunikacjê z dronem po USART6 oraz przerwania synchronizacyjne i od enkodera.
+
+ */
 void initPortC(GPIO_InitTypeDef* GPIO_InitStructure)
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOC, ENABLE);
@@ -61,6 +96,13 @@ void initPortC(GPIO_InitTypeDef* GPIO_InitStructure)
 	GPIO_Init(GPIOC, GPIO_InitStructure);
 }
 
+/** @brief Inicjalizacja portu E.
+
+@param GPIO_InitStructure WskaŸnik do struktury inicjuj¹cej GPIO zadeklarowanej na pocz¹tku funkcji main programu.
+
+Port E odpowiada za obs³ugê wejsæ od joysticka.
+
+ */
 void initPortE(GPIO_InitTypeDef* GPIO_InitStructure)
 {
 	RCC_AHB1PeriphClockCmd(RCC_AHB1Periph_GPIOE, ENABLE);
@@ -73,6 +115,13 @@ void initPortE(GPIO_InitTypeDef* GPIO_InitStructure)
 	GPIO_Init(GPIOE, GPIO_InitStructure);
 }
 
+/** @brief Funkcja zapalaj¹ca diodê.
+
+@param diode numer pinu diody podawany w specjalnym makrze.
+
+Tkaa funkcja jest bardziej opisowa - jej nazwa od razu t³umaczy jej dzia³anie.
+
+ */
 void lightDiode(uint16_t diode) {
 	GPIO_SetBits(GPIOB, diode);
 }

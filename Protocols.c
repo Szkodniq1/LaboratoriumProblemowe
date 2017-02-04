@@ -1,5 +1,21 @@
+/**
+\author Piotr Gomo³a
+\date 4.02.2017
+
+Zawiera funkcje do odbioru i rozpatrywania otrzymywanych danych oraz
+funkcje przesy³aj¹ce dane.
+
+*/
 #include "PROTOCOLS.h"
 
+/** @brief Funkcja obs³ugi danych otrzymywanych od PC.
+
+@param data Otrzymany bajt danych.
+
+Funkcja ta rozpatruje czy otrzymany bajt jest nag³ówkiem, mówi¹cym o tym jaka akcja ma byæ wykonana lub jakie dane maj¹ byæ otrzymane/wys³ane.
+Jesli nie jest nag³ówkiem oznacza to ¿e otrzymywane s¹ aktualnie jakie dane.
+
+ */
 void solvePCRequest(char data) {
 	if(pcFrameType == HEADER) {
 		solvePCHeader(data);
@@ -8,6 +24,15 @@ void solvePCRequest(char data) {
 	}
 }
 
+/** @brief Funkcja obs³ugi nag³ówka otrzymywanego od PC.
+
+@param data Otrzymany bajt danych.
+
+Nag³ówek jest zapamiêtywany w celu odpowiedniego rozpatrywania pozniej otrzymywanych danych. Protokó³ komunikacji zostal opisany
+pod linkiem:
+https://docs.google.com/spreadsheets/d/1Z8SAWWgW5sYVVg0G66wHbE4FpKFIf1aW96YlPKJvAEY/edit#gid=0
+
+ */
 void solvePCHeader(char data){
 	switch(data) {
 		case START_PC:
@@ -63,6 +88,14 @@ void solvePCHeader(char data){
 	}
 }
 
+/** @brief Funkcja obs³ugi danych otrzymywanego od PC.
+
+@param data Otrzymany bajt danych.
+
+Wszystkie dane wysy³ane s¹ w zmiennych zajmuj¹cych 4 bajty (float) dlatego w pierwszej kolejnosci
+odbioreane sa 4 bajty danych. Tablica ta na koncu trafia do funkcji decyduj¹cej do jakiej zmiennej zapisaæ te dane.
+
+ */
 void solvePCData(char data){
 	frame[shiftedIndex] = data;
 	shiftedIndex++;
@@ -73,6 +106,13 @@ void solvePCData(char data){
 	}
 }
 
+/** @brief Funkcja decydujaca gdzie zapisaæ dane.
+
+@param value Otrzymana wartosc.
+
+Na podstawie wczesniej zapisanego naglowka, wartosc przypisywana jest do odpowiedniej zmiennej.
+
+ */
 void saveDataInProperVariable(float value) {
 	switch(receivedData) {
 			case LOWER_P:
@@ -107,6 +147,11 @@ void saveDataInProperVariable(float value) {
 		}
 }
 
+/** @brief Pojedyncza funkcja wysy³aj¹ca ci¹giem wszystkie dane do komputera.
+
+P³ytka wysy³a: k¹t z drona, k¹t z enkodera, k¹t ustawiony, aktualny parametr p, i oraz d, czas symulacji.
+
+ */
 void sendAllDataToPC() {
 	//k¹ty
 	USART_put_char(PC, ANGLE_DRONE);
@@ -127,6 +172,13 @@ void sendAllDataToPC() {
 	USART_put_long(PC, time);
 }
 
+/** @brief Funkcja rozpatruj¹ca dane otrzymywane od drona.
+
+@param data Otrzymany bajt danych.
+
+Brak implementacji ze wzglêdu na brak danych dotycz¹cych komunikacji z dronem.
+
+ */
 void solveDroneRequest(char data) {
 
 }

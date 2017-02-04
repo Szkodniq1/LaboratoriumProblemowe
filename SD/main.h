@@ -12,6 +12,9 @@
 #define STATE_IDLE 0
 #define STATE_WORKING 1
 
+#define ENCODER_RESOLUTION (1.0/2500.0)
+
+
 char STATE;
 
 void EXTI0_IRQHandler(void);
